@@ -1,0 +1,31 @@
+{
+  "name": "conbo-cordova-nativestorage",
+  "version": "1.0.0",
+  "description": "Persistent storage classes for hybrid ConboJS apps using cordova-plugin-nativestorage",
+  "main": "index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mesmotronic/conbo-cordova-nativestorage.git"
+  },
+  "keywords": [],
+  "author": "Neil Rackett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mesmotronic/conbo-cordova-nativestorage/issues"
+  },
+  "homepage": "https://github.com/mesmotronic/conbo-cordova-nativestorage#readme",
+  "dependencies": {
+    "conbo": "^4.3.25"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
