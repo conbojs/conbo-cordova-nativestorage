@@ -8,8 +8,8 @@ This library contains persistent storage classes for hybrid ConboJS apps using
 * `NativeList` is a direct replacement for `LocalList`
 
 Any data currently saved to `LocalStorage` by a `LocalHash` or `LocalList` will
-automatically be migrated to `NativeStorage` on first use, assuming you use the
-same `name` option.
+automatically be migrated to `NativeStorage` on first use, where the same `name`
+option is used.
 
 ## Installation
 
