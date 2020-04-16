@@ -1,8 +1,8 @@
 {
   "name": "conbo-cordova-nativestorage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Persistent storage classes for hybrid ConboJS apps using cordova-plugin-nativestorage",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
     "lib/**/*"
   ],
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/mesmotronic/conbo-cordova-nativestorage#readme",
   "dependencies": {
-    "conbo": "^4.3.25"
+    "conbo": "^4.3.26"
   },
   "devDependencies": {
     "typescript": "^3.8.3"

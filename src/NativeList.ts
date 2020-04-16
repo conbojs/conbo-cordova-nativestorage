@@ -4,7 +4,7 @@ import { List, defineDefaults, warn, ConboEvent, noop, info, DataEvent } from 'c
  * NativeList is a persistent List class that is saved using cordova-plugin-nativestorage
  * @author 		Neil Rackett
  */
-export default class NativeList extends List
+export class NativeList extends List
 {
 	private __construct(options:any):void
 	{
@@ -88,3 +88,5 @@ export default class NativeList extends List
 	}
 	
 }
+
+export default NativeList;

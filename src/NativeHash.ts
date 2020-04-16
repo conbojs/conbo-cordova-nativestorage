@@ -4,7 +4,7 @@ import { defineDefaults, warn, ConboEvent, noop, info, DataEvent, Hash, assign }
  * NativeHash is a persistent Hash class that is saved using cordova-plugin-nativestorage
  * @author 		Neil Rackett
  */
-export default class NativeHash extends Hash
+export class NativeHash extends Hash
 {
 	private __construct(options:any):void
 	{
@@ -88,3 +88,5 @@ export default class NativeHash extends Hash
 	}
 	
 }
+
+export default NativeHash;
