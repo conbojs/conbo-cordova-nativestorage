@@ -52,7 +52,7 @@ export default class NativeHash extends Hash
 			(value:string) =>
 			{
 				assign(this, JSON.parse(value));
-				this.dispatchEvent(new DataEvent('ready'));
+				this.dispatchEvent(new DataEvent('ready', this));
 			},
 
 			// Doesn't exist yet

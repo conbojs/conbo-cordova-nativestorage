@@ -7,17 +7,25 @@ This library contains persistent storage classes for hybrid ConboJS apps using
 * `NativeHash` is a direct replacement for `LocalHash`; and
 * `NativeList` is a direct replacement for `LocalList`
 
-Any data currently saved to `LocalStorage` by a `LocalHash` or `LocalList` will
-automatically be migrated to `NativeStorage` on first use, where the same `name`
-option is used.
+Any data currently saved to `LocalStorage` by a `LocalHash` or `LocalList` with 
+the same name will automatically be migrated to `NativeStorage` on first use.
 
 ## Installation
 
-```
+```cmd
 cordova plugin add cordova-plugin-nativestorage
 npm i conbo-cordova-nativestorage
 ```
 
 ## Usage
 
-See documentation for `LocalStorage` related classes at https://conbo.mesmotronic.com/
+Use of the classes in this library is almost identical to ConboJS's built-in
+`LocalStorage` related classes, see https://conbo.mesmotronic.com/, although
+you should wait until the `'ready'` event has fired (usually just a few
+milliseconds  after Cordova's `'deviceready'` event) before interacting with
+instances of classes in this library, for example:
+
+```js
+let list = new NativeList({name:'myList'});
+list.addEventListener('ready', () => console.log('Your native list is ready to go!'));
+```

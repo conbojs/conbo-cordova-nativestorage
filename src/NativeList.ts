@@ -13,13 +13,13 @@ export default class NativeList extends List
 		options = defineDefaults(options, {name:defaultName});
 		
 		let { name } = options;
-		
+
 		if (name == defaultName)
 		{
 			warn('No name specified for '+this.toString()+', using "'+defaultName+'"');
 		}
 
-		document.addEventListener('deviceready', this._deviceReadyHandler.bind(this, name), false);
+		document.addEventListener('deviceready', this._deviceReadyHandler.bind(this, name));
 		
 		(<any>List.prototype).__construct.call(this, options);
 	}
@@ -34,7 +34,7 @@ export default class NativeList extends List
 		// Sync with NativeStorage
 		this.addEventListener(ConboEvent.CHANGE, (event:ConboEvent) =>
 		{
-			let value = JSON.stringify(this.source);
+			let value = JSON.stringify(this);
 			
 			NativeStorage.setItem(name, value, noop, (error:any) =>
 			{
@@ -52,7 +52,7 @@ export default class NativeList extends List
 			(value:string) =>
 			{
 				this.source = JSON.parse(value);
-				this.dispatchEvent(new DataEvent('ready'));
+				this.dispatchEvent(new DataEvent('ready', this));
 			},
 
 			// Doesn't exist yet
