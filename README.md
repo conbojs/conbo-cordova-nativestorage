@@ -28,4 +28,8 @@ instances of classes in this library, for example:
 ```js
 let list = new NativeList({name:'myList'});
 list.addEventListener('ready', () => console.log('Your native list is ready to go!'));
+
+// or
+
+let list = await NativeList.create({name:'myList'});
 ```

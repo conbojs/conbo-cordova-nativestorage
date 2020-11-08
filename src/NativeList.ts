@@ -1,4 +1,4 @@
-import { List, defineDefaults, warn, ConboEvent, noop, info, DataEvent } from 'conbo';
+import { List, defineDefaults, warn, ConboEvent, noop, info, DataEvent, Promise } from 'conbo';
 
 /**
  * NativeList is a persistent List class that is saved using cordova-plugin-nativestorage
@@ -6,6 +6,15 @@ import { List, defineDefaults, warn, ConboEvent, noop, info, DataEvent } from 'c
  */
 export class NativeList extends List
 {
+	public static create(options:any):Promise<NativeList>
+	{
+		return new Promise((resolve, reject) =>
+		{
+			const hash = new NativeList(options);
+			hash.addEventListener('ready', resolve, {once:true});
+		});
+	}
+
 	private __construct(options:any):void
 	{
 		var defaultName = 'ConboNativeList';

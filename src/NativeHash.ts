@@ -1,4 +1,4 @@
-import { defineDefaults, warn, ConboEvent, noop, info, DataEvent, Hash, assign } from 'conbo';
+import { defineDefaults, warn, ConboEvent, noop, info, DataEvent, Hash, assign, Promise } from 'conbo';
 
 /**
  * NativeHash is a persistent Hash class that is saved using cordova-plugin-nativestorage
@@ -6,6 +6,15 @@ import { defineDefaults, warn, ConboEvent, noop, info, DataEvent, Hash, assign }
  */
 export class NativeHash extends Hash
 {
+	public static create(options:any):Promise<NativeHash>
+	{
+		return new Promise((resolve, reject) =>
+		{
+			const hash = new NativeHash(options);
+			hash.addEventListener('ready', resolve, {once:true});
+		});
+	}
+
 	private __construct(options:any):void
 	{
 		var defaultName = 'ConboNativeHash';
