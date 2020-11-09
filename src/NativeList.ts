@@ -10,8 +10,8 @@ export class NativeList extends List
 	{
 		return new Promise((resolve, reject) =>
 		{
-			const hash = new NativeList(options);
-			hash.addEventListener('ready', resolve, {once:true});
+			const list = new NativeList(options);
+			list.addEventListener('ready', () => resolve(list), {once:true});
 		});
 	}
 

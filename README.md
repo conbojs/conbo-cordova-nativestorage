@@ -32,4 +32,12 @@ list.addEventListener('ready', () => console.log('Your native list is ready to g
 // or
 
 let list = await NativeList.create({name:'myList'});
+
+// or
+
+NativeList.create({name:'myList'}).then(list =>
+{
+	this.list = list;
+	console.log('Your native list is ready to go!'));
+});
 ```
